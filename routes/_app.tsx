@@ -8,7 +8,7 @@ export default function App({ Component }: PageProps) {
         <title>isaacs-colors-2025</title>
         <link rel="stylesheet" href="/styles.css" />
       </head>
-      <body>
+      <body class="bg-white">
         <Component />
       </body>
     </html>

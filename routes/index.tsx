@@ -1,5 +1,4 @@
 import { useSignal } from "@preact/signals";
-import Counter from "../islands/Counter.tsx";
 import isaacsColors from "../static/isaacs-custom-colors.json" with { type: "json" };
 import { Button } from "../components/Button.tsx";
 import ColorChart from "../islands/ColorChart.tsx";

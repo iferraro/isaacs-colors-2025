@@ -7,6 +7,7 @@ export default function Home() {
   return (
     <div class="flex flex-col items-center justify-around content-around gap-4 p-4 max-w-screen-md mx-auto">
       <h1 class="text-4xl text-black font-bold">Isaac&apos;s Colors</h1>
+      <h2 class="text-xl text-black">(Yes, I did name these myself)</h2>
       <ColorChart colors={isaacsColors} />
     </div>
   );

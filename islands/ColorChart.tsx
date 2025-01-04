@@ -10,22 +10,18 @@ type ColorChartProps = {
 };
 
 function copyToClipboard(text: string) {
-  navigator.clipboard
-    .writeText(text)
-    .catch((err) => {
-      console.error("Failed to copy text: ", err);
-    });
+  navigator.clipboard.writeText(text).catch((err) => {
+    console.error("Failed to copy text: ", err);
+  });
 }
 
 function ColorChart({ colors }: ColorChartProps) {
-  const colorChartRow = (color: Color) => (
-    <tr class="border-2 border-black">
-      <td class="p-4 text-black">{color.name}</td>
-      <td class="p-4">
-        {/* TODO: Add shadow to the button */}
-        {/* TODO: Add a checkmark to indicate that code was copied */}
+  const colorChartBox = (color: Color) => (
+    <div class="flex flex-wrap border-2 border-black w-36 h-36">
+      <div class="flex-1 p-4 text-black">{color.name}</div>
+      <div class="flex-1 p-4">
         <button
-          class="w-16 h-8 border-8 rounded-lg"
+          class="w-16 h-8 rounded-lg"
           style={{
             backgroundColor: color.id,
             borderWidth: 4,
@@ -33,23 +29,13 @@ function ColorChart({ colors }: ColorChartProps) {
           }}
           onClick={() => copyToClipboard(color.id)}
         />
-      </td>
-    </tr>
+      </div>
+    </div>
   );
 
   return (
-    <section>
-      <table class="rounded-lg">
-        <thead class="px-4 border-2 border-black rounded-lg">
-          <tr class="text-black">
-            <th class="p-4 rounded-lg">Name</th>
-            <th class="p-4 rounded-lg">Block</th>
-          </tr>
-        </thead>
-        <tbody class="border-2 border-black">
-          {colors.map((color) => colorChartRow(color))}
-        </tbody>
-      </table>
+    <section class="flex flex-wrap justify-center items-center gap-4">
+      {colors.map((color) => colorChartBox(color))}
     </section>
   );
 }

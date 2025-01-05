@@ -15,11 +15,13 @@ function copyToClipboard(text: string) {
 
 function ColorChart({ colors }: ColorChartProps) {
   const colorChartBox = (color: Color) => (
-    <div class="flex flex-col border-2 border-white">
-      <div class="w-36 h-12 p-2 text-white">{color.name}</div>
-      <div class="w-36 h-24 p-2">
+    <div class="flex flex-col gap-2">
+      <div class="w-40 p-1 text-center text-white bg-black border-2 border-white rounded-t-2xl">
+        {color.name}
+      </div>
+      <div class="w-40 h-24">
         <button
-          class="w-full h-full rounded-2xl"
+          class="w-full h-full rounded-b-2xl"
           style={{
             backgroundColor: color.id,
           }}
@@ -30,7 +32,7 @@ function ColorChart({ colors }: ColorChartProps) {
   );
 
   return (
-    <section class="flex flex-wrap justify-center items-center border-2 border-white">
+    <section class="flex flex-wrap justify-center items-center gap-4">
       {colors.map((color) => colorChartBox(color))}
     </section>
   );

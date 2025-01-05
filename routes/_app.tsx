@@ -8,7 +8,7 @@ export default function App({ Component }: PageProps) {
         <title>Isaac's Color Chart</title>
         <link rel="stylesheet" href="/styles.css" />
       </head>
-      <body class="bg-white">
+      <body class="bg-black">
         <Component />
       </body>
     </html>
